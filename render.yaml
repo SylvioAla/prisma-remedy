@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: prisma-remedy-webhook
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    plan: free
+    envVars:
+      - key: REMEDY_API_URL
+        value: http://<remedy-server>:8008/api/arsys/v1/entry/HPD:IncidentInterface_Create
+      - key: REMEDY_AUTH_TOKEN
+        value: <tu_token_de_remedy>
